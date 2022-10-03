@@ -84,7 +84,6 @@ class LMap {
      * @param el
      */
     _json(json, el) {
-
         let mZoom = json.zoom ? json.zoom : Utils.zoom(),
             dataMap = {},
             url = json.json;
@@ -144,14 +143,12 @@ class LMap {
 
             for (let key in dataMap) {
                 dataMarker = dataMap[key];
-                marker = L.marker(
-                    [
-                        dataMarker.lat,
-                        dataMarker.lng
-                    ], {
-                        icon: rectIcon
-                    }
-                );
+                marker = L.marker([
+                    dataMarker.lat,
+                    dataMarker.lng
+                ], {
+                    icon: rectIcon
+                });
 
                 const popUp = Template.popUpContent(dataMarker);
 
@@ -179,7 +176,6 @@ class LMap {
      * @param el
      */
     _multi(json, el) {
-
         const jsonNode = document.getElementById(json.data),
             jsonText = jsonNode.textContent,
             dataMap = JSON.parse(jsonText);
@@ -198,7 +194,6 @@ class LMap {
 
         for (let i = 0; i < dataMap.length; i++) {
             markerArray.push(L.marker([dataMap[i].lat, dataMap[i].lng]));
-
             totalLat += parseFloat(dataMap[i].lat);
             totalLng += parseFloat(dataMap[i].lng);
         }
@@ -236,7 +231,6 @@ class LMap {
         }
 
         for (let index = 0; index < dataMap.length; index++) {
-
             dataMarker = dataMap[index];
             marker = L.marker([
                 dataMarker.lat,
@@ -301,6 +295,6 @@ class LMap {
         marker.addTo(map);
         map.invalidateSize();
 
-        Utils.tabMap();
+        Utils.tabMap(map);
     }
 }

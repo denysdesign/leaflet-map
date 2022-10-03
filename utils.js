@@ -64,7 +64,7 @@ export const Utils = {
     /**
      * Fix display map in tabs
      */
-    tabMap: () => {
+    tabMap: (map) => {
         const menuTabMap = document.getElementById('js-map-tab');
 
         if (typeof menuTabMap !== 'undefined' && menuTabMap !== null) {

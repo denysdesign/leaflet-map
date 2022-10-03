@@ -14,9 +14,7 @@ export const Template = {
         const encoded = window.btoa(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-150 -150 300 300"><defs><g id="a" transform="rotate(45)"><path d="M0 47A47 47 0 0 0 47 0L62 0A62 62 0 0 1 0 62Z" fill-opacity="0.4"/><path d="M0 67A67 67 0 0 0 67 0L81 0A81 81 0 0 1 0 81Z" fill-opacity="0.3"/><path d="M0 86A86 86 0 0 0 86 0L100 0A100 100 0 0 1 0 100Z" fill-opacity="0.2"/></g></defs><circle r="149" fill="${color}" fill-opacity="0.1" stroke="${color}" stroke-width="1px" stroke-opacity="0.5"/><g fill="${color}"><circle r="41"/><g><use xlink:href="#a"/></g><g transform="rotate(120)"><use xlink:href="#a"/></g><g transform="rotate(240)"><use xlink:href="#a"/></g></g></svg>`);
 
         return (`data:image/svg+xml;base64,${encoded}`);
-    },
-
-    clusterIcons: (cluster) => {
+    }, clusterIcons: (cluster) => {
         let childCount = cluster.getChildCount(),
             c = ' marker-cluster2-',
             clasterColor,
@@ -36,25 +34,26 @@ export const Template = {
             clasterColor = '#d1200d';
         }
 
-        let icon = Template.clusterSVG(clasterColor);
+        const icon = Template.clusterSVG(clasterColor);
 
         return new DivIcon({
             html: `<div style="background: no-repeat url(${icon}); width: ${size}px; height: ${size}px;"><span>${childCount}</span></div>`,
             className: 'marker-cluster2' + c,
             iconSize: new Point(size, size)
         });
-    },
-
-    /**
+    }, /**
      * Add svg icon pin
      *
      * @param data
      */
     pinSVG: (data = false) => {
-        let styleIcon = false,
-            svgIcon = false,
+        let styleIcon,
+            svgIcon,
             style_1 = '#ff3501',
             style_2 = '#cd2a00';
+
+        styleIcon.style_2 = undefined;
+        styleIcon.style_1 = undefined;
 
         if (typeof data[0] !== 'undefined') {
             styleIcon = data[0].style ? data[0].style : '';
@@ -73,18 +72,16 @@ export const Template = {
         }
 
         return (`data:image/svg+xml;base64,${encoded}`);
-    },
-
-    /**
+    }, /**
      * PopUp baloon
      *
      * @param data
      */
     popUpContent: (data) => {
         let content,
-            title = '',
-            address = '',
-            desc = '';
+            title,
+            address,
+            desc;
 
         if (data.title) {
             title = `<h3 class="uk-h5 uk-margin-small-bottom">${data.title}</h3>`;
