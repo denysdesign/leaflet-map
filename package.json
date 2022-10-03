@@ -1,0 +1,29 @@
+{
+  "name": "@denysdesign/leaflet-map",
+  "version": "1.0.0",
+  "description": "Leaflet map class for anywhere: single, markercluster, load json data, etc.",
+  "main": "map.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denysdesign/leaflet-map.git"
+  },
+  "keywords": [
+    "leaflet",
+    "map",
+    "json",
+    "data",
+    "map"
+  ],
+  "author": "Denys Nosov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/denysdesign/leaflet-map/issues"
+  },
+  "homepage": "https://github.com/denysdesign/leaflet-map#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "leaflet": "^1.9.1",
+    "leaflet-gesture-handling": "^1.2.2",
+    "leaflet.markercluster": "^1.5.3"
+  }
+}
