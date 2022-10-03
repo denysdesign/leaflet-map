@@ -14,7 +14,14 @@ export const Template = {
         const encoded = window.btoa(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-150 -150 300 300"><defs><g id="a" transform="rotate(45)"><path d="M0 47A47 47 0 0 0 47 0L62 0A62 62 0 0 1 0 62Z" fill-opacity="0.4"/><path d="M0 67A67 67 0 0 0 67 0L81 0A81 81 0 0 1 0 81Z" fill-opacity="0.3"/><path d="M0 86A86 86 0 0 0 86 0L100 0A100 100 0 0 1 0 100Z" fill-opacity="0.2"/></g></defs><circle r="149" fill="${color}" fill-opacity="0.1" stroke="${color}" stroke-width="1px" stroke-opacity="0.5"/><g fill="${color}"><circle r="41"/><g><use xlink:href="#a"/></g><g transform="rotate(120)"><use xlink:href="#a"/></g><g transform="rotate(240)"><use xlink:href="#a"/></g></g></svg>`);
 
         return (`data:image/svg+xml;base64,${encoded}`);
-    }, clusterIcons: (cluster) => {
+    },
+
+    /**
+     * Add cluster icon
+     *
+     * @param cluster
+     */
+    clusterIcons: (cluster) => {
         let childCount = cluster.getChildCount(),
             c = ' marker-cluster2-',
             clasterColor,
@@ -41,7 +48,9 @@ export const Template = {
             className: 'marker-cluster2' + c,
             iconSize: new Point(size, size)
         });
-    }, /**
+    },
+
+    /**
      * Add svg icon pin
      *
      * @param data
@@ -69,7 +78,9 @@ export const Template = {
         }
 
         return (`data:image/svg+xml;base64,${encoded}`);
-    }, /**
+    },
+
+    /**
      * PopUp baloon
      *
      * @param data
