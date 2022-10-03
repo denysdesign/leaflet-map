@@ -52,9 +52,6 @@ export const Template = {
             style_1 = '#ff3501',
             style_2 = '#cd2a00';
 
-        styleIcon.style_2 = undefined;
-        styleIcon.style_1 = undefined;
-
         if (typeof data[0] !== 'undefined') {
             styleIcon = data[0].style ? data[0].style : '';
             svgIcon = data[0].svg ? data[0].svg : '';
