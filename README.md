@@ -1,1 +1,1 @@
-# Class leaflet-map
+# leaflet-map
